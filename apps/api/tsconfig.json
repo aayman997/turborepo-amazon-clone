@@ -1,0 +1,21 @@
+{
+  "extends": "tsconfig/nestjs.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "plugins": [
+      {
+        "name": "@typescript-eslint/eslint-plugin"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
