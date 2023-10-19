@@ -14,7 +14,6 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-//    "emotion-cache.tsx"
+    "node_modules"
   ]
 }

@@ -20,6 +20,9 @@ module.exports = {
     '@vercel/style-guide/eslint/next',
     'eslint-config-turbo',
   ].map(require.resolve),
+  plugins       : [
+    'check-file',
+  ],
   parserOptions : {
     project,
   },
@@ -36,7 +39,19 @@ module.exports = {
   },
   ignorePatterns: ['node_modules/', 'dist/'],
   // add rules configurations here
-  rules: {
-    'import/no-default-export': 'off',
+  rules    : {
+    'import/no-default-export'           : 'off',
+    'eslint-comments/require-description': 'off',
+    'react/hook-use-state'               : 'off',
   },
+  overrides: [
+    {
+      files: ['**/*'],
+      rules: {
+        'unicorn/filename-case'                : 'off',
+        'check-file/folder-naming-convention'  : ['error', { 'app/**/': 'NEXT_JS_APP_ROUTER_CASE' }],
+        'check-file/filename-naming-convention': ['error', { '**/*.js': 'PASCAL_CASE' }],
+      },
+    },
+  ],
 };
